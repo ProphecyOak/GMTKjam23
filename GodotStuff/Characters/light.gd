@@ -15,3 +15,9 @@ func _process(delta):
 func _on_area_2d_mouse_entered():
 	play("green")
 	emit_signal("triggerCars")
+
+
+func _on_area_2d_mouse_exited():
+	play("yellow")
+	await get_tree().create_timer(2).timeout
+	play("red")
