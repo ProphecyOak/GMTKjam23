@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbw11yr6j1uig"]
+[gd_scene load_steps=3 format=3 uid="uid://cbw11yr6j1uig"]
 
 [ext_resource type="Texture2D" uid="uid://cs2n74xlhb40i" path="res://Assets/Frog.png" id="1_nbu8t"]
+[ext_resource type="Texture2D" uid="uid://btagg6yex1rxk" path="res://Assets/DeadFrog.png" id="2_liouo"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Frog" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(363, 255)
-scale = Vector2(4.625, 4.625)
+scale = Vector2(4, 4)
 texture = ExtResource("1_nbu8t")
+
+[node name="DeadFrog" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(520, 256)
+scale = Vector2(4, 4)
+texture = ExtResource("2_liouo")
