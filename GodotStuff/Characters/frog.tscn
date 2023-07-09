@@ -1,40 +1,49 @@
 [gd_scene load_steps=6 format=3 uid="uid://w0bjtqmehhb"]
 
-[ext_resource type="Texture2D" uid="uid://cs2n74xlhb40i" path="res://Assets/Frog.png" id="1_k7xl4"]
-[ext_resource type="Script" path="res://Scripts/frog.gd" id="1_omuda"]
+[ext_resource type="Script" path="res://Scripts/frog.gd" id="1_c1kor"]
+[ext_resource type="Texture2D" uid="uid://cs2n74xlhb40i" path="res://Assets/Frog.png" id="2_jvnti"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_pvieg"]
 a = Vector2(-24, 0)
 b = Vector2(24, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxfum"]
-size = Vector2(16, 32)
+size = Vector2(64, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6ejo"]
-size = Vector2(16, 96)
+size = Vector2(64, 96)
 
 [node name="Frog" type="Node2D"]
-script = ExtResource("1_omuda")
+script = ExtResource("1_c1kor")
 
-[node name="Frog" type="Sprite2D" parent="."]
+[node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("1_k7xl4")
+texture = ExtResource("2_jvnti")
 
 [node name="SplatArea" type="Area2D" parent="."]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SplatArea"]
 shape = SubResource("SegmentShape2D_pvieg")
 debug_color = Color(0, 0.607843, 0.654902, 0.721569)
 
 [node name="OncomingCarCheck" type="Area2D" parent="."]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OncomingCarCheck"]
-position = Vector2(0, 80)
+position = Vector2(24, 112)
 shape = SubResource("RectangleShape2D_vxfum")
 
 [node name="NextLaneCarCheck" type="Area2D" parent="."]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLaneCarCheck"]
-position = Vector2(-128, 48)
+position = Vector2(-104, 48)
 shape = SubResource("RectangleShape2D_v6ejo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="move"]
