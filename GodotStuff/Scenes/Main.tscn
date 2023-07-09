@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbw11yr6j1uig"]
+[gd_scene load_steps=13 format=3 uid="uid://cbw11yr6j1uig"]
 
 [ext_resource type="Texture2D" uid="uid://b766jk00jmixu" path="res://Assets/RoadTiles.png" id="1_80bi7"]
 [ext_resource type="Texture2D" uid="uid://lnvnopchqtyh" path="res://Assets/post.png" id="2_n5c7v"]
 [ext_resource type="Texture2D" uid="uid://b8edxgi76f1mg" path="res://Assets/lights.png" id="3_w2ues"]
 [ext_resource type="PackedScene" uid="uid://csga5g8s3y30u" path="res://Components/lane.tscn" id="4_hrn28"]
 [ext_resource type="Script" path="res://Scripts/FrogSpawner.gd" id="5_ficbm"]
+[ext_resource type="Script" path="res://Scenes/pedestrianSpawner.gd" id="5_kopkc"]
 [ext_resource type="Script" path="res://Scenes/Score.gd" id="6_v4bf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_watb3"]
@@ -53,6 +54,12 @@ script = ExtResource("5_ficbm")
 
 [node name="Timer" type="Timer" parent="FrogSpawner"]
 wait_time = 5.0
+
+[node name="pedestrianSpawner" type="Node2D" parent="."]
+position = Vector2(1135, 286)
+script = ExtResource("5_kopkc")
+
+[node name="Timer" type="Timer" parent="pedestrianSpawner"]
 
 [node name="Lane1" parent="." instance=ExtResource("4_hrn28")]
 position = Vector2(192, 768)
