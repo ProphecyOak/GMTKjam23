@@ -17,10 +17,13 @@ func _process(delta):
 	if $SplatArea.has_overlapping_areas():
 		print("dead")
 		queue_free()
+		await get_tree().create_timer(.7).timeout
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func move():
-	if column == 15:
+	if column == 18:
 		print("Survived")
+		queue_free()
 	else:
 		move_local_x(moveSpeed)
 		column +=1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/frog.gd" id="1_c1kor"]
 [ext_resource type="Texture2D" uid="uid://cs2n74xlhb40i" path="res://Assets/Frog.png" id="2_jvnti"]
-[ext_resource type="AudioStream" uid="uid://c8um28eg2da24" path="res://Assets/FrogDeath.wav" id="3_ucg3c"]
+[ext_resource type="AudioStream" uid="uid://c8um28eg2da24" path="res://Assets/FrogDeath.wav" id="3_fb3p4"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_pvieg"]
 a = Vector2(-24, 0)
@@ -47,7 +47,6 @@ shape = SubResource("RectangleShape2D_v6ejo")
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ucg3c")
-volume_db = 5.0
+stream = ExtResource("3_fb3p4")
 
 [connection signal="timeout" from="Timer" to="." method="move"]

@@ -13,6 +13,8 @@ func move():
 			get_parent().frogsCrossed += 1
 			if get_parent().frogsCrossed >= 3:
 				print("GAME OVER")
+				await get_tree().create_timer(1).timeout
+				get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 			$Timer.stop()
 		if !$NextLaneCarCheck.has_overlapping_areas():
 			move_local_x(-moveSpeed)
