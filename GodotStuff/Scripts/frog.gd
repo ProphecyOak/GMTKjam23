@@ -6,6 +6,7 @@ var decaying = false
 var column = 0
 const moveSpeed = 64
 
+
 func move():
 	if alive:
 		if column == 15:
@@ -34,10 +35,11 @@ func _process(_delta):
 
 func splat():
 	alive = false
-	$OncomingCarCheck.visible = false
-	$NextLaneCarCheck.visible = false
-	$SplatArea.visible = false
+	$OncomingCarCheck/CollisionShape2D.disabled = true
+	$NextLaneCarCheck/CollisionShape2D.disabled = true
+	$SplatArea/CollisionShape2D.disabled = true
 	await get_tree().create_timer(.8).timeout
+	Global.score += .5
 	$Timer.stop()
 	$Timer.wait_time = 10
 	$Timer.start()
