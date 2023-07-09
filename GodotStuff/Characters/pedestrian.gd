@@ -16,8 +16,9 @@ func _ready():
 func _process(delta):
 	if $SplatArea.has_overlapping_areas():
 		print("dead")
-		queue_free()
-		await get_tree().create_timer(.7).timeout
+		$hit.play()
+		#queue_free()
+		await get_tree().create_timer(.9).timeout
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func move():

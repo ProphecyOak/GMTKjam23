@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbw11yr6j1uig"]
+[gd_scene load_steps=16 format=3 uid="uid://cbw11yr6j1uig"]
 
 [ext_resource type="Texture2D" uid="uid://b766jk00jmixu" path="res://Assets/RoadTiles.png" id="1_80bi7"]
 [ext_resource type="Script" path="res://Scenes/Main.gd" id="1_g7xfj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/FrogSpawner.gd" id="5_ficbm"]
 [ext_resource type="Script" path="res://Scenes/pedestrianSpawner.gd" id="5_kopkc"]
 [ext_resource type="Script" path="res://Scenes/Score.gd" id="6_v4bf8"]
+[ext_resource type="FontFile" uid="uid://bw2smi2whxyem" path="res://Assets/Pixeboy-z8XGD.ttf" id="8_5a5rm"]
 [ext_resource type="AudioStream" uid="uid://budocigk86kg3" path="res://Assets/Untitled 1 - 7:9:23, 12.49 PM.wav" id="9_8ixvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_watb3"]
@@ -37,6 +38,7 @@ sources/1 = SubResource("TileSetAtlasSource_ttavn")
 sources/2 = SubResource("TileSetAtlasSource_q80p2")
 
 [sub_resource type="Theme" id="Theme_6pca0"]
+default_font = ExtResource("8_5a5rm")
 default_font_size = 25
 
 [node name="Node2D" type="Node2D"]

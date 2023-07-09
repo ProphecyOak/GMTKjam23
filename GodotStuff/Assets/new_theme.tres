@@ -1,4 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://cosbc6ajl4lq3"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cosbc6ajl4lq3"]
+
+[ext_resource type="FontFile" uid="uid://bw2smi2whxyem" path="res://Assets/Pixeboy-z8XGD.ttf" id="1_p1srj"]
 
 [resource]
+default_font = ExtResource("1_p1srj")
 default_font_size = 60

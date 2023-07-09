@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7mcg2mrxok0f"]
+[gd_scene load_steps=6 format=3 uid="uid://c7mcg2mrxok0f"]
 
 [ext_resource type="Script" path="res://gameOver.gd" id="1_kph8d"]
 [ext_resource type="Theme" uid="uid://cosbc6ajl4lq3" path="res://Assets/new_theme.tres" id="2_evsbm"]
+[ext_resource type="FontFile" uid="uid://bw2smi2whxyem" path="res://Assets/Pixeboy-z8XGD.ttf" id="3_8i8c2"]
+[ext_resource type="AudioStream" uid="uid://6ta4m542x77a" path="res://Assets/sfx_sounds_button11.wav" id="3_vj5oy"]
 
 [sub_resource type="Theme" id="Theme_f7rdg"]
+default_font = ExtResource("3_8i8c2")
 default_font_size = 40
 
 [node name="gameOver" type="Node2D"]
@@ -22,7 +25,7 @@ offset_top = 400.0
 offset_right = 1109.0
 offset_bottom = 658.0
 theme = ExtResource("2_evsbm")
-text = "Your severence is: "
+text = "Your severance pay is: "
 
 [node name="Label" type="Label" parent="."]
 offset_left = 120.0
@@ -40,5 +43,8 @@ offset_right = 670.0
 offset_bottom = 626.0
 theme = SubResource("Theme_f7rdg")
 text = "Retry"
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vj5oy")
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
