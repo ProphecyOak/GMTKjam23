@@ -46,3 +46,4 @@ func splat():
 	decaying = true
 	$Texture.texture = deadTexture
 	$Texture.queue_redraw()
+	$AudioStreamPlayer.play()

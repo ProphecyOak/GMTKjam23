@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvvnhnek883gr"]
+[gd_scene load_steps=7 format=3 uid="uid://dvvnhnek883gr"]
 
 [ext_resource type="Texture2D" uid="uid://buywxeqhhyeit" path="res://Assets/Car.png" id="1_4v3b8"]
 [ext_resource type="Script" path="res://Scripts/car.gd" id="2_unhkr"]
+[ext_resource type="AudioStream" uid="uid://cs8nr27owa6fb" path="res://Assets/CarStart.wav" id="3_1bewb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gcgli"]
 size = Vector2(9.7022, 18)
@@ -47,5 +48,9 @@ texture_filter = 1
 position = Vector2(1.32, 0)
 scale = Vector2(9.835, 8)
 sprite_frames = SubResource("SpriteFrames_veg2d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1bewb")
+volume_db = 3.0
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
